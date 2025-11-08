@@ -1,5 +1,6 @@
 require("eza-preview"):setup({
 	default_tree = false,
+	git_ignore = false,
 })
 require("duckdb"):setup()
 require("full-border"):setup()
