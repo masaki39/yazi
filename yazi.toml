@@ -38,7 +38,6 @@ prepend_previewers = [
   { name = "*.xlsx", run = "duckdb" },  
   { name = "*.db", run = "duckdb" },
   { name = "*.duckdb", run = "duckdb" },
-  { name = "*/", run = "eza-preview" },
 ]
 
 prepend_preloaders = [  

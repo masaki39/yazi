@@ -14,5 +14,4 @@ prepend_keymap = [
   { on = ["s", "f" ], run = "search --via=fd --args='-t f'", desc = "Search files" },
   { on = "H", run = "plugin duckdb -1", desc = "Scroll one column to the left" },
   { on = "L", run = "plugin duckdb +1", desc = "Scroll one column to the right" },
-  { on = "E", run = "plugin eza-preview", desc = "Toggle tree/list dir preview" },
 ]
