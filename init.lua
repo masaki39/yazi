@@ -7,7 +7,6 @@ require("bunny"):setup({
         { key = "c", path = "~/.config", desc = "Config files" },
         { key = "v", path = "~/dev", desc = "dev" },
         { key = "d", path = "~/Downloads", desc = "Downloads" },
-        { key = "e", path = "~/Desktop", desc = "Desktop" },
         { key = "o", path = "~/Documents/ObsidianVault", desc = "Obsidian" },
         { key = "p", path = "~/pCloud Drive", desc = "pCloud Drive" }, 
         { key = "w", path = "~/pCloud Drive/Work", desc = "Work" }, 
