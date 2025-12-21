@@ -47,3 +47,7 @@ prepend_preloaders = [
   { name = "*.txt", run = "duckdb", multi = false },  
   { name = "*.xlsx", run = "duckdb", multi = false },
 ]
+
+append_previewers = [
+  { name = "*.jsonl", run = "json" },
+]
