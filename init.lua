@@ -10,9 +10,4 @@ require("bunny"):setup({
         { key = "w", path = "~/pCloud Drive/Work", desc = "Work" }, 
         { key = "x", path = "~/pCloud Drive/Work/20230400-大学院", desc = "大学院" }, 
     },
-    desc_strategy = "path", -- If desc isn't present, use "path" or "filename", default is "path"
-    ephemeral = true, -- Enable ephemeral hops, default is true
-    tabs = true, -- Enable tab hops, default is true
-    notify = false, -- Notify after hopping, default is false
-    fuzzy_cmd = "fzf", -- Fuzzy searching command, default is "fzf"
 })

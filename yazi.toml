@@ -10,21 +10,18 @@ edit = [
   { run = 'micro "$@"', block = true, for = "unix" },
 ]
 code = [
-   { run = 'code "$@"', block = true, for = "unix" },
+   { run = 'code "$@"', block = false, for = "unix" },
 ]
-ppt = [
-  { run = 'open -a "Microsoft PowerPoint" "$@"', block = true, for = "unix" },
+default = [
+  { run = 'open "$@"', block = false, for = "unix" },
 ]
-open = [
-  { run = 'open "$@"', block = true, for = "unix" },
-]
-
 
 [open]
 prepend_rules = [
   { name = "*.csv", use = "code" },
-  { name = "*.pptx", use = "ppt" },
-  { name = "*.html", use = "open" },
+  { name = "*.pptx", use = "default" },
+  { name = "*.html", use = "default" },
+  { name = "*.MP4", use = "default" },
 ]
 
 [plugin]
