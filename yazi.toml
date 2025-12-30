@@ -1,6 +1,5 @@
 [mgr]
 show_hidden = true
-# ratio = [1, 2, 5]
 
 [preview]
 max_width  = 1920
@@ -10,8 +9,8 @@ max_height = 1920
 edit = [
   { run = 'micro "$@"', block = true, for = "unix" },
 ]
-excel = [
-   { run = 'open -a "Microsoft Excel" "$@"', block = true, for = "unix" },
+code = [
+   { run = 'code "$@"', block = true, for = "unix" },
 ]
 ppt = [
   { run = 'open -a "Microsoft PowerPoint" "$@"', block = true, for = "unix" },
@@ -23,7 +22,7 @@ open = [
 
 [open]
 prepend_rules = [
-  { name = "*.csv", use = "excel" },
+  { name = "*.csv", use = "code" },
   { name = "*.pptx", use = "ppt" },
   { name = "*.html", use = "open" },
 ]
@@ -31,23 +30,7 @@ prepend_rules = [
 [plugin]
 prepend_previewers = [
   { mime = "image/tiff", run = "magick" },
-  { name = "*.csv", run = "duckdb" },  
-  { name = "*.tsv", run = "duckdb" },  
-  { name = "*.parquet", run = "duckdb" },  
-  { name = "*.txt", run = "duckdb" },  
-  { name = "*.xlsx", run = "duckdb" },  
-  { name = "*.db", run = "duckdb" },
-  { name = "*.duckdb", run = "duckdb" },
 ]
-
-prepend_preloaders = [  
-  { name = "*.csv", run = "duckdb", multi = false },  
-  { name = "*.tsv", run = "duckdb", multi = false },  
-  { name = "*.parquet", run = "duckdb", multi = false },
-  { name = "*.txt", run = "duckdb", multi = false },  
-  { name = "*.xlsx", run = "duckdb", multi = false },
-]
-
 append_previewers = [
   { name = "*.jsonl", run = "json" },
 ]
