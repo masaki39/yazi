@@ -13,3 +13,10 @@ brew install --cask ghostty
 ```bash
 git clone https://github.com/masaki39/yazi.git ~/.config/yazi
 ```
+
+## Upgrade
+
+```bash
+brew upgrade yazi
+ya pkg upgrade yazi-rs/plugins:smart-enter yazi-rs/plugins:toggle-pane stelcodes/bunny orhnk/system-clipboard
+```
