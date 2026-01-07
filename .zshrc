@@ -1,11 +1,11 @@
 # alias
 alias ze="micro ~/.zshrc"
 alias zs="source ~/.zshrc"
-alias down="cd /Users/masaki/Downloads"
-alias ccc="cd /Users/masaki/Documents/masaki39-core/.obsidian/plugins/obsidian-crystal"
-alias css="cd /Users/masaki/Documents/masaki39-core/.obsidian/snippets"
-alias ooo="cd /Users/masaki/Documents/masaki39-core && claude"
-alias obsidian="cd /Users/masaki/Documents/masaki39-core"
+alias down="cd ~/Downloads"
+alias ccc="cd ~/Documents/masaki39-core/.obsidian/plugins/obsidian-crystal"
+alias css="cd ~/Documents/masaki39-core/.obsidian/snippets"
+alias ooo="cd ~/Documents/masaki39-core && claude"
+alias obsidian="cd ~/Documents/masaki39-core"
 
 ## uv系
 alias main='uv run python main.py'
