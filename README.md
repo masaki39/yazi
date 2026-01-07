@@ -4,7 +4,11 @@ My personal settings.
 
 ## Settings
 
-Follow README.md of each directories.
+### Homebrew
+
+```zsh
+brew bundle
+```
 
 ## Symbolic link
 
