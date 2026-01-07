@@ -1,7 +1,7 @@
 require("bunny"):setup({
     hops = {
         { key = "h", path = "~", desc = "Home directory" },
-        { key = "c", path = "~/.config", desc = "Config files" },
+        { key = "c", path = "~/dotfiles", desc = "Config files" },
         { key = "v", path = "~/dev", desc = "dev" },
         { key = "d", path = "~/Downloads", desc = "Downloads" },
         { key = "o", path = "~/Documents/masaki39-core", desc = "Obsidian" },
