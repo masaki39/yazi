@@ -12,6 +12,7 @@ brew install --cask ghostty
 
 ```bash
 git clone https://github.com/masaki39/yazi.git ~/.config/yazi
+ya pkg install
 ```
 
 ## Upgrade
