@@ -6,6 +6,7 @@ th.git.ignored_sign = "!"
 th.git.deleted_sign = "D"
 th.git.updated_sign = "S"
 require("git"):setup()
+require("full-border"):setup()
 require("bunny"):setup({
     hops = {
         { key = "h", path = "~", desc = "Home directory" },
