@@ -11,5 +11,5 @@ ya pkg install
 
 ```bash
 brew upgrade yazi
-ya pkg upgrade yazi-rs/plugins:smart-enter yazi-rs/plugins:toggle-pane stelcodes/bunny orhnk/system-clipboard
+ya pkg upgrade yazi-rs/plugins:smart-enter yazi-rs/plugins:toggle-pane stelcodes/bunny orhnk/system-clipboard yazi-rs/plugins:git
 ```
