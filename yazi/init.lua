@@ -15,6 +15,7 @@ require("bunny"):setup({
         { key = "o", path = "~/Documents/masaki39-core", desc = "Obsidian" },
         { key = "p", path = "~/pCloud Drive", desc = "pCloud Drive" }, 
         { key = "w", path = "~/pCloud Drive/Work", desc = "Work" }, 
+        { key = "a", path = "~/dev/analysis", desc = "Analysis" }, 
     },
     desc_strategy = "path", -- If desc isn't present, use "path" or "filename", default is "path"
     ephemeral = true, -- Enable ephemeral hops, default is true
