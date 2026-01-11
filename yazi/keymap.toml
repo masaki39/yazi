@@ -12,5 +12,6 @@ prepend_keymap = [
   { on = ["/", "c"], run = "shell 'claude' --block", desc = "Claude code" },
   { on = ["/", "g"], run = "shell 'lazygit' --block", desc = "Lazygit" },
   { on = ["/", "r"], run = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"', desc = "Go to git root" },
+  { on = ["/", "n"], run = 'shell -- nvim "$@"', desc = "Open in Neovim" },
   { on = ["/", "v"], run = 'shell -- code "$@"', desc = "Open in VSCode" },
 ]
