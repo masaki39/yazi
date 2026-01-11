@@ -17,3 +17,4 @@ ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/ssh/config ~/.ssh/config
 ln -s ~/dotfiles/yazi ~/.config/yazi
 ```
+
