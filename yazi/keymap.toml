@@ -1,8 +1,8 @@
 [mgr]
 prepend_keymap = [
   { on = "<Enter>", run = "plugin smart-enter" },
-  { on = "<C-c>", run = "plugin system-clipboard" },
-  { on = "<C-v>", run = "shell 'cb paste' --block", desc = "Paste from clipboard" },
+  { on = "<C-y>", run = "plugin system-clipboard" },
+  { on = "<C-p>", run = "shell 'cb paste' --block", desc = "Paste from clipboard" },
   { on = "b", run = "plugin bunny" },
   { on = "T", run = "plugin toggle-pane max-preview" },
   { on = ["s", "s" ], run = "search --via=fd", desc = "Search" },
