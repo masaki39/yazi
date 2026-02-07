@@ -31,7 +31,6 @@ layout {
                 }
                 // 右下: Lazygit (40%)
                 pane size="40%" {
-                    command "lazygit"
                 }
             }
         }
