@@ -31,6 +31,7 @@ layout {
                 }
                 // 右下: ターミナル (40%)
                 pane size="40%" {
+                    name "Terminal"
                     command "gh"
                     args "issue" "list"
                 }
