@@ -10,9 +10,9 @@ alias ccc="cd ~/Documents/masaki39-core/.obsidian/plugins/obsidian-crystal"
 alias css="cd ~/Documents/masaki39-core/.obsidian/snippets"
 alias ooo="cd ~/Documents/masaki39-core && claude"
 alias obsidian="cd ~/Documents/masaki39-core"
-alias gr="cd $(git rev-parse --show-toplevel)"
+alias gr='cd "$(git rev-parse --show-toplevel)"'
 alias gg="lazygit"
-alias zz="cd $(git rev-parse --show-toplevel 2>/dev/null || pwd) && zellij --layout dev"
+alias zz='cd "$(git rev-parse --show-toplevel 2>/dev/null || pwd)" && zellij --layout dev'
 
 ## uv系
 alias main='uv run python main.py'
