@@ -11,7 +11,7 @@ layout {
         }
     }
 
-    tab {
+    tab name="DEV" {
         pane split_direction="vertical" {
             // 左: Yazi ファイラー (50%)
             pane size="50%" focus=true {
