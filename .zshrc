@@ -15,7 +15,7 @@ alias obsidian="cd ~/Documents/masaki39-core"
 alias gr='cd "$(git rev-parse --show-toplevel)"'
 alias gg="lazygit"
 alias zz='cd "$(git rev-parse --show-toplevel 2>/dev/null || pwd)" && zellij --layout dev'
-alias p='nvim /tmp/prompt_$$.md -c startinsert -c "autocmd VimLeave * silent! %y +"'
+alias p='nvim "/tmp/prompt_$(date +%Y%m%d%H%M%S).md" -c startinsert -c "autocmd VimLeave * silent! %y +"'
 
 ## uv系
 alias main='uv run python main.py'
