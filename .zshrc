@@ -1,36 +1,36 @@
 # PATH
-export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$(brew --prefix)/bin:$PATH"
 export EDITOR='nvim'
 export VISUAL='nvim'
+export OBSIDIAN_DIR='~/Documents/masaki39-core'
 
-# エディタでコマンドラインを編集する機能をロード
+# edit-command-line (Esc -> e) 
 autoload -Uz edit-command-line
-# ZLEウィジェットとして登録
 zle -N edit-command-line
-# キーバインドを設定 (Esc -> e)
 bindkey '\ee' edit-command-line
 
+# beginning search history ( up-line and down-line )
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[A' up-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search
+
 # alias
-alias ze="nvim ~/.zshrc"
+alias ze="$EDITOR ~/.zshrc"
 alias zs="source ~/.zshrc"
-alias dot='cd ~/dotfiles'
 alias home="cd ~"
 alias down="cd ~/Downloads"
 alias desk="cd ~/Desktop"
-alias ccc="cd ~/Documents/masaki39-core/.obsidian/plugins/obsidian-crystal"
-alias css="cd ~/Documents/masaki39-core/.obsidian/snippets"
-alias ooo="cd ~/Documents/masaki39-core && claude"
-alias obsidian="cd ~/Documents/masaki39-core"
+alias dot='cd ~/dotfiles'
+alias obsidian="cd $OBSIDIAN_DIR"
+alias ccc="cd $OBSIDIAN_DIR/.obsidian/plugins/obsidian-crystal"
+alias css="cd $OBSIDIAN_DIR/.obsidian/snippets"
+alias ooo="cd $OBSIDIAN_DIR && claude"
 alias gr='cd "$(git rev-parse --show-toplevel)"'
 alias gg="lazygit"
 alias zz='cd "$(git rev-parse --show-toplevel 2>/dev/null || pwd)" && zellij --layout dev'
 alias p='nvim "/tmp/prompt_$(date +%Y%m%d%H%M%S).md" -c startinsert -c "autocmd VimLeave * silent! %y +"'
-
-## uv系
-alias main='uv run python main.py'
-
-# starship
-eval "$(starship init zsh)"
 
 # yazi
 function y() {
@@ -41,7 +41,13 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# fzf
+source <(fzf --zsh)
+# starship
+eval "$(starship init zsh)"
 # zsh-autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
+# zsh-syntax-highlighting
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# fastfetch 
 fastfetch
