@@ -4,6 +4,7 @@ export PATH="/opt/homebrew/bin:$PATH"
 # alias
 alias ze="nvim ~/.zshrc"
 alias zs="source ~/.zshrc"
+alias dot='cd ~/dotfiles'
 alias home="cd ~"
 alias down="cd ~/Downloads"
 alias ccc="cd ~/Documents/masaki39-core/.obsidian/plugins/obsidian-crystal"
