@@ -3,6 +3,13 @@ export PATH="/opt/homebrew/bin:$PATH"
 export EDITOR='nvim'
 export VISUAL='nvim'
 
+# エディタでコマンドラインを編集する機能をロード
+autoload -Uz edit-command-line
+# ZLEウィジェットとして登録
+zle -N edit-command-line
+# キーバインドを設定 (Esc -> e)
+bindkey '\ee' edit-command-line
+
 # alias
 alias ze="nvim ~/.zshrc"
 alias zs="source ~/.zshrc"
