@@ -1,5 +1,7 @@
 # PATH
 export PATH="/opt/homebrew/bin:$PATH"
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 # alias
 alias ze="nvim ~/.zshrc"
