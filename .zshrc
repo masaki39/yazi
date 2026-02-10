@@ -36,18 +36,14 @@ alias p='nvim "/tmp/prompt_$(date +%Y%m%d%H%M%S).md" -c startinsert -c "autocmd 
 
 # devcontainer
 function dvc() {
-	# Docker Desktopが起動しているか確認
 	if ! docker info >/dev/null 2>&1; then
 		echo "Docker Desktop is not running. Starting..."
 		open -a Docker
-		# Docker Desktopが起動するまで待機
 		while ! docker info >/dev/null 2>&1; do
 			sleep 1
 		done
 		echo "Docker Desktop started."
 	fi
-
-	# devcontainer up してから exec
 	devcontainer up --workspace-folder . && \
 	devcontainer exec --workspace-folder . /bin/bash
 }
