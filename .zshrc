@@ -28,13 +28,18 @@ alias oo="cd $OBSIDIAN_DIR"
 alias oc="cd $OBSIDIAN_DIR/.obsidian/plugins/obsidian-crystal"
 alias os="cd $OBSIDIAN_DIR/.obsidian/snippets"
 alias oa="cd $OBSIDIAN_DIR && claude"
-alias gr='cd "$(git rev-parse --show-toplevel)"'
+alias gr='cd "$(git_root)"'
 alias gg="lazygit"
 alias dstop='docker stop $(docker ps -q)'
 alias drm='docker rm $(docker ps -aq)'
-alias zz='cd "$(git rev-parse --show-toplevel 2>/dev/null || pwd)" && zellij --layout dev'
-alias zc='cd "$(git rev-parse --show-toplevel 2>/dev/null || pwd)" && zellij --layout code'
+alias zz='cd "$(git_root)" && zellij --layout dev'
+alias zc='cd "$(git_root)" && zellij --layout code'
 alias p='nvim "/tmp/prompt_$(date +%Y%m%d%H%M%S).md" -c startinsert -c "autocmd VimLeave * silent! %y +"'
+
+# git_root: get git root directory, fallback to current directory if not in a git repo
+function git_root() {
+    git rev-parse --show-toplevel 2>/dev/null || pwd
+}
 
 # devcontainer
 function dvc() {
