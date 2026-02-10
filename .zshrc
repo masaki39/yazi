@@ -2,7 +2,7 @@
 export PATH="$(brew --prefix)/bin:$PATH"
 export EDITOR='nvim'
 export VISUAL='nvim'
-export OBSIDIAN_DIR='~/Documents/masaki39-core'
+export OBSIDIAN_DIR="$HOME/Documents/masaki39-core"
 
 # edit-command-line (Esc -> e) 
 autoload -Uz edit-command-line
@@ -16,18 +16,18 @@ zle -N down-line-or-beginning-search
 bindkey '^[[A' up-line-or-beginning-search
 bindkey '^[[B' down-line-or-beginning-search
 
-# alias
-alias ze="$EDITOR ~/.zshrc"
-alias zs="source ~/.zshrc"
-alias home="cd ~"
-alias down="cd ~/Downloads"
-alias desk="cd ~/Desktop"
-alias dot='cd ~/dotfiles'
-alias dev='cd ~/dev'
-alias obsidian="cd $OBSIDIAN_DIR"
-alias ccc="cd $OBSIDIAN_DIR/.obsidian/plugins/obsidian-crystal"
-alias css="cd $OBSIDIAN_DIR/.obsidian/snippets"
-alias ooo="cd $OBSIDIAN_DIR && claude"
+# aliases
+alias ze="$EDITOR $HOME/.zshrc"
+alias zs="source $HOME/.zshrc"
+alias home="cd $HOME"
+alias down="cd $HOME/Downloads"
+alias desk="cd $HOME/Desktop"
+alias dot="cd $HOME/dotfiles"
+alias dev="cd $HOME/dev"
+alias oo="cd $OBSIDIAN_DIR"
+alias oc="cd $OBSIDIAN_DIR/.obsidian/plugins/obsidian-crystal"
+alias cs="cd $OBSIDIAN_DIR/.obsidian/snippets"
+alias oa="cd $OBSIDIAN_DIR && claude"
 alias gr='cd "$(git rev-parse --show-toplevel)"'
 alias gg="lazygit"
 alias dstop='docker stop $(docker ps -q)'
