@@ -17,9 +17,8 @@ layout {
             pane size="70%" split_direction="horizontal" {
                 // 上: nvim (70%)
                 pane size="70%" focus=true {
-                    name "Neovim"
-                    command "nvim"
-                    args "."
+                    command "bash"
+                    args "-c" "exec yazi"
                 }
                 // 下: terminal 2つ (30%)
                 pane size="30%" split_direction="vertical" {
