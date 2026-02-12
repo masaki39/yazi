@@ -32,9 +32,11 @@ alias gr='cd "$(git_root)"'
 alias gg="lazygit"
 alias dstop='docker stop $(docker ps -q)'
 alias drm='docker rm $(docker ps -aq)'
-alias zx='cd "$(git_root)" && zellij --layout welcome'
+alias za='cd "$(git_root)" && zellij --layout welcome'
 alias zz='cd "$(git_root)" && zellij --layout dev'
+alias zx='cd "$(git_root)" && zellij --layout quad'
 alias zc='cd "$(git_root)" && zellij --layout code'
+alias zv='cd "$(git_root)" && zellij --layout vertical'
 alias p='nvim "/tmp/prompt_$(date +%Y%m%d%H%M%S).md" -c startinsert -c "autocmd VimLeave * silent! %y +"'
 
 # git_root: get git root directory, fallback to current directory if not in a git repo
