@@ -134,6 +134,13 @@ keybinds clear-defaults=true {
         }
     }
     shared_except "locked" {
+        bind "Alt a" {
+            LaunchOrFocusPlugin "session-manager" {
+                floating true
+                move_to_focused_tab true
+            }
+        }
+        bind "Alt d" { Detach; }
         bind "Alt left" { MoveFocusOrTab "left"; }
         bind "Alt down" { MoveFocus "down"; }
         bind "Alt up" { MoveFocus "up"; }
@@ -155,6 +162,7 @@ keybinds clear-defaults=true {
         bind "Alt p" { TogglePaneInGroup; }
         bind "Alt Shift p" { ToggleGroupMarking; }
         bind "Alt q" { Quit; }
+        bind "Alt z" { ToggleFocusFullscreen; }
     }
     shared_except "locked" "move" {
         bind "Alt m" { SwitchToMode "move"; }
