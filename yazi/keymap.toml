@@ -44,3 +44,8 @@ desc = "Lazygit"
 on = ["g", "r"]
 run = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"'
 desc = "Git Root"
+
+[[mgr.prepend_keymap]]
+on = ["c", "r"]
+run = "shell --confirm 'git_root=$(git rev-parse --show-toplevel 2>/dev/null) && [ -n \"$git_root\" ] && printf \"%s\" \"$0\" | sed \"s|^$git_root/||\" | cb copy'"
+desc = "Copy git-relative path"
