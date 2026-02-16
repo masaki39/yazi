@@ -21,11 +21,11 @@ layout {
             // 右: Claude Code + Terminal (50%)
             pane size="50%" split_direction="horizontal" {
                 // 右上: Claude Code (60%)
-                pane size="60%" {
+                pane size="70%" {
                     command "claude"
                 }
                 // 右下: Terminal (40%)
-                pane size="40%" {
+                pane size="30%" {
                     name "Terminal"
                 }
             }
