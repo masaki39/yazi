@@ -37,6 +37,7 @@ alias zx='_zellij_attach quad'
 alias zc='_zellij_attach code'
 alias zv='_zellij_attach vertical'
 alias p='nvim "/tmp/prompt_$(date +%Y%m%d%H%M%S).md" -c startinsert -c "autocmd VimLeave * silent! %y +"'
+alias cc="pwd | tr -d '\n' | pbcopy"
 
 # git_root: get git root directory, fallback to current directory if not in a git repo
 function git_root() {
