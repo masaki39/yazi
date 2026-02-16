@@ -13,23 +13,13 @@ layout {
 
     tab name="QUAD" {
         pane split_direction="horizontal" {
-            // 上段: Claude 1 + Claude 2 (50%)
-            pane size="50%" split_direction="vertical" {
-                pane size="50%" {
-                    command "claude"
-                }
-                pane size="50%" {
-                    command "claude"
-                }
+            pane split_direction="vertical" {
+                pane
+                pane
             }
-            // 下段: Claude 3 + Claude 4 (50%)
-            pane size="50%" split_direction="vertical" {
-                pane size="50%" {
-                    command "claude"
-                }
-                pane size="50%" {
-                    command "claude"
-                }
+            pane split_direction="vertical" {
+                pane
+                pane
             }
         }
     }
