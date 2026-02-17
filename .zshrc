@@ -5,9 +5,6 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export OBSIDIAN_DIR="$HOME/Documents/masaki39-core"
 
-# compinit
-autoload -Uz compinit && compinit
-
 # edit-command-line (Esc -> e) 
 autoload -Uz edit-command-line
 zle -N edit-command-line
