@@ -4,3 +4,4 @@ quick-terminal-animation-duration=0
 theme = TokyoNight
 custom-shader = ~/dotfiles/ghostty/shader/WIP.glsl
 macos-option-as-alt = true
+macos-titlebar-style=tabs
