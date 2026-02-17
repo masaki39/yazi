@@ -85,3 +85,13 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # fastfetch 
 fastfetch
+# typewriter
+_typewriter() {
+  local msg="$1"
+  for ((i=0; i<${#msg}; i++)); do
+    printf "%s" "${msg:$i:1}"
+    sleep 0.04
+  done
+  printf "\n"
+}
+_typewriter 'Welcome to underground...'
