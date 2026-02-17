@@ -91,7 +91,10 @@ _typewriter() {
   local msg="$1"
   for ((i=0; i<${#msg}; i++)); do
     printf "%s" "${msg:$i:1}"
-    sleep 0.04
+    if read -s -t 0.04 -k 1 2>/dev/null; then
+      printf "%s" "${msg:$((i+1))}"
+      break
+    fi
   done
   printf "\n"
 }
