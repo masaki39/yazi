@@ -1,8 +1,12 @@
 # PATH
-export PATH="$(brew --prefix)/bin:$PATH"
+BREW_PREFIX="$(brew --prefix)"
+export PATH="$BREW_PREFIX/bin:$PATH"
 export EDITOR='nvim'
 export VISUAL='nvim'
 export OBSIDIAN_DIR="$HOME/Documents/masaki39-core"
+
+# compinit
+autoload -Uz compinit && compinit
 
 # edit-command-line (Esc -> e) 
 autoload -Uz edit-command-line
@@ -80,9 +84,9 @@ source <(fzf --zsh)
 # starship
 eval "$(starship init zsh)"
 # zsh-autosuggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 # zsh-syntax-highlighting
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 # fastfetch 
 fastfetch
 # typewriter
