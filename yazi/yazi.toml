@@ -15,7 +15,7 @@ default = [{ run = 'open "$@"', block = false, for = "unix" }]
 prepend_rules = [
   { mime = "text/csv", use = "csvlens" },
   { name = "*.pptx", use = "default" },
-  { name = "*.html", use = "default" },
+  { mime = "text/html", use = "default" },
   { name = "*.MP4", use = "default" },
   { name = "*.mp4", use = "default" },
 ]
