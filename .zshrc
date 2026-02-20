@@ -78,6 +78,8 @@ function y() {
 
 # fzf
 source <(fzf --zsh)
+# zoxide
+eval "$(zoxide init zsh)"
 # starship
 eval "$(starship init zsh)"
 # zsh-autosuggestions
