@@ -32,11 +32,12 @@ alias gr='cd "$(git_root)"'
 alias gg="lazygit"
 alias dstop='docker stop $(docker ps -q)'
 alias drm='docker rm $(docker ps -aq)'
-alias za='zellij --layout welcome attach --create welcome'
+alias zw='_zellij_named welcome'
 alias zz='_zellij_attach dev'
 alias zx='_zellij_attach quad'
 alias zc='_zellij_attach code'
 alias zv='_zellij_attach vertical'
+alias za='_zellij_named ambient'
 alias p='nvim "/tmp/prompt_$(date +%Y%m%d%H%M%S).md" -c startinsert -c "autocmd VimLeave * silent! %y +"'
 alias cc="pwd | tr -d '\n' | pbcopy"
 
@@ -45,12 +46,18 @@ function git_root() {
   git rev-parse --show-toplevel 2>/dev/null || pwd
 }
 
-# zellij attach template
+# zellij attach template (session name = git root dir)
 function _zellij_attach() {
   cd "$(git_root)"
   local session_name=$(basename "$(pwd)")
   zellij delete-session "$session_name" 2>/dev/null
   zellij --layout "$1" attach --create "$session_name"
+}
+
+# zellij named layout (session name = layout name)
+function _zellij_named() {
+  zellij delete-session "$1" 2>/dev/null
+  zellij --layout "$1" attach --create "$1"
 }
 
 # devcontainer
@@ -76,6 +83,33 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# typewriter
+_typewriter() {
+  local msg="$1"
+  for ((i=0; i<${#msg}; i++)); do
+    printf "%s" "${msg:$i:1}"
+    if read -s -t 0.04 -k 1 </dev/tty 2>/dev/null; then
+      printf "%s" "${msg:$((i+1))}"
+      break
+    fi
+  done
+  printf "\n"
+}
+_typewriter_fortune() {
+  local line
+  while true; do
+    while IFS= read -r line; do
+      if [[ -n "$line" ]]; then
+        _typewriter "$line"
+      else
+        printf "\n"
+      fi
+    done <<< "$(fortune)"
+    printf "\n"
+    sleep 1
+  done
+}
+
 # fzf
 source <(fzf --zsh)
 # zoxide
@@ -86,18 +120,7 @@ eval "$(starship init zsh)"
 source "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 # zsh-syntax-highlighting
 source "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-# fastfetch 
+
+# startup
 fastfetch
-# typewriter
-_typewriter() {
-  local msg="$1"
-  for ((i=0; i<${#msg}; i++)); do
-    printf "%s" "${msg:$i:1}"
-    if read -s -t 0.04 -k 1 2>/dev/null; then
-      printf "%s" "${msg:$((i+1))}"
-      break
-    fi
-  done
-  printf "\n"
-}
 _typewriter 'Welcome to underground...'
