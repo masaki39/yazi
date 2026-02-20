@@ -5,3 +5,4 @@ theme = TokyoNight
 custom-shader = ~/dotfiles/ghostty/shader/WIP.glsl
 macos-option-as-alt = true
 macos-titlebar-style=tabs
+background-opacity=0.9
