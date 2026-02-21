@@ -2,7 +2,7 @@ keybind = global:alt+space=toggle_quick_terminal
 quick-terminal-position=center
 quick-terminal-animation-duration=0
 theme = TokyoNight
-custom-shader = ~/dotfiles/ghostty/shader/WIP.glsl
+custom-shader = ~/ghq/github.com/masaki39/dotfiles/ghostty/shader/WIP.glsl
 macos-option-as-alt = true
 macos-titlebar-style=tabs
 background-opacity=0.9

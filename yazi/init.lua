@@ -9,7 +9,7 @@ require("git"):setup()
 require("bunny"):setup({
 	hops = {
 		{ key = "h", path = "~", desc = "Home directory" },
-		{ key = ".", path = "~/dotfiles", desc = "Dotfiles" },
+		{ key = ".", path = "~/ghq/github.com/masaki39/dotfiles", desc = "Dotfiles" },
 		{ key = "c", path = "~/.config", desc = "Config files" },
 		{ key = "v", path = "~/dev", desc = "Dev" },
 		{ key = "d", path = "~/Downloads", desc = "Downloads" },

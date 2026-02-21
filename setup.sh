@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DOTFILES="$HOME/ghq/github.com/masaki39/dotfiles"
+
 # Homebrew
 brew bundle
 
@@ -7,14 +9,14 @@ brew bundle
 mkdir -p ~/.config
 
 # Symbolic links (force overwrite)
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/ssh/config ~/.ssh/config
-ln -sf ~/dotfiles/yazi ~/.config/yazi
-ln -sf ~/dotfiles/ghostty ~/.config/ghostty
-ln -sf ~/dotfiles/zellij ~/.config/zellij
-ln -sf ~/dotfiles/nvim ~/.config/nvim
+ln -sf "$DOTFILES/.zshrc" ~/.zshrc
+ln -sf "$DOTFILES/ssh/config" ~/.ssh/config
+ln -sf "$DOTFILES/yazi" ~/.config/yazi
+ln -sf "$DOTFILES/ghostty" ~/.config/ghostty
+ln -sf "$DOTFILES/zellij" ~/.config/zellij
+ln -sf "$DOTFILES/nvim" ~/.config/nvim
 
 # Install yazi plugins
-bash ~/dotfiles/yazi/install.sh
+bash "$DOTFILES/yazi/install.sh"
 
 echo "✓ Setup complete!"
