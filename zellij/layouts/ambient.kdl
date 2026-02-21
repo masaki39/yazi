@@ -15,9 +15,7 @@ layout {
         pane split_direction="vertical" {
             // 左: _typewriter_fortune (50%, focus)
             pane size="50%" focus=true {
-                name "fortune"
-                command "zsh"
-                args "-i" "-c" "_typewriter_fortune"
+                command "typewriter"
             }
             // 右: btop + tty-clock (50%)
             pane size="50%" split_direction="horizontal" {
