@@ -9,6 +9,7 @@ brew bundle
 mkdir -p ~/.config
 
 # Symbolic links (force overwrite)
+ln -sf "$DOTFILES/.gitconfig" ~/.gitconfig
 ln -sf "$DOTFILES/.zshrc" ~/.zshrc
 ln -sf "$DOTFILES/ssh/config" ~/.ssh/config
 ln -sf "$DOTFILES/yazi" ~/.config/yazi
