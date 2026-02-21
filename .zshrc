@@ -128,19 +128,6 @@ _typewriter_fortune() {
   done
 }
 
-# csl: search Zotero CSL styles and copy URL to clipboard
-csl() {
-  local selected
-  selected=$(curl -s https://www.zotero.org/styles-files/styles.json \
-    | jq -r '.[] | "\(.name)\t\(.title)"' \
-    | fzf --query="${1:-}" --with-nth=2 --delimiter='\t')
-  if [ -n "$selected" ]; then
-    local url="https://www.zotero.org/styles/$(echo "$selected" | awk -F'\t' '{print $1}')"
-    echo -n "$url" | pbcopy
-    echo "Copied: $url"
-  fi
-}
-
 # fzf
 source <(fzf --zsh)
 # zoxide
