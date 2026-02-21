@@ -41,6 +41,14 @@ alias za='_zellij_named ambient'
 alias p='nvim "/tmp/prompt_$(date +%Y%m%d%H%M%S).md" -c startinsert -c "autocmd VimLeave * silent! %y +"'
 alias cc="pwd | tr -d '\n' | pbcopy"
 
+# ghq fzf
+gcd() {
+  local target=$(ghq list -p | fzf)
+  if [ -n "$target" ]; then
+    cd "$target"
+  fi
+}
+
 # git_root: get git root directory, fallback to current directory if not in a git repo
 function git_root() {
   git rev-parse --show-toplevel 2>/dev/null || pwd
