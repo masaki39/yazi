@@ -52,7 +52,7 @@ alias p='nvim "/tmp/prompt_$(date +%Y%m%d%H%M%S).md" -c startinsert -c "autocmd 
 alias cc="pwd | tr -d '\n' | pbcopy"
 
 # ghq fzf
-gcd() {
+gq() {
   local target=$(ghq list -p | fzf)
   if [ -n "$target" ]; then
     cd "$target"
