@@ -20,8 +20,8 @@ hash = "2d89eed279daeb9ea3779d60b86421ff"
 
 [[plugin.deps]]
 use = "masaki39/fd-fzf"
-rev = "fca0cdc"
-hash = "246b472667fa4f1d5ead2315f645da4a"
+rev = "56fe573"
+hash = "a32b85adb0d14a447295e3ae399498be"
 
 [flavor]
 deps = []
