@@ -37,19 +37,11 @@ alias dot="cd $HOME/ghq/github.com/masaki39/dotfiles"
 alias dev="cd $HOME/dev"
 alias oo="cd $OBSIDIAN_DIR"
 alias os="cd $OBSIDIAN_DIR/.obsidian/snippets"
-alias oc="cd $OBSIDIAN_DIR && claude"
 alias gr='cd "$(git_root)"'
 alias gg="lazygit"
 alias dstop='docker stop $(docker ps -q)'
 alias drm='docker rm $(docker ps -aq)'
-alias zw='_zellij_named welcome'
-alias zz='_zellij_attach dev'
-alias zx='_zellij_attach quad'
-alias zc='_zellij_attach code'
-alias zv='_zellij_attach vertical'
-alias za='_zellij_named ambient'
 alias p='nvim "/tmp/prompt_$(date +%Y%m%d%H%M%S).md" -c startinsert -c "autocmd VimLeave * silent! %y +"'
-alias cc="pwd | tr -d '\n' | pbcopy"
 
 # ghq fzf
 gq() {
@@ -72,10 +64,17 @@ function _zellij_attach() {
   zellij --layout "$1" attach --create "$session_name"
 }
 
-# zellij named layout (session name = layout name)
-function _zellij_named() {
-  zellij delete-session "$1" 2>/dev/null
-  zellij --layout "$1" attach --create "$1"
+# zellij fzf layout launcher
+function zz() {
+  local layout_dir="${ZELLIJ_CONFIG_DIR:-$HOME/.config/zellij}/layouts"
+  local selected=$(ls "$layout_dir" | sed 's/\.kdl$//' | { cat; echo "welcome"; } | fzf --prompt="zellij layout: ")
+  [ -z "$selected" ] && return
+  if [ "$selected" = "welcome" ]; then
+    zellij delete-session welcome 2>/dev/null
+    zellij --layout welcome attach --create welcome
+  else
+    _zellij_attach "$selected"
+  fi
 }
 
 # devcontainer
