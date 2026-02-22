@@ -30,12 +30,6 @@ bindkey '^[[B' down-line-or-beginning-search
 # aliases
 alias ze="$EDITOR $HOME/.zshrc"
 alias zs="source $HOME/.zshrc"
-alias home="cd $HOME"
-alias down="cd $HOME/Downloads"
-alias desk="cd $HOME/Desktop"
-alias dot="cd $HOME/ghq/github.com/masaki39/dotfiles"
-alias oo="cd $OBSIDIAN_DIR"
-alias os="cd $OBSIDIAN_DIR/.obsidian/snippets"
 alias gr='cd "$(git_root)"'
 alias gg="lazygit"
 alias dstop='docker stop $(docker ps -q)'

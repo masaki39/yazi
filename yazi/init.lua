@@ -10,13 +10,10 @@ require("bunny"):setup({
 	hops = {
 		{ key = "h", path = "~", desc = "Home directory" },
 		{ key = ".", path = "~/ghq/github.com/masaki39/dotfiles", desc = "Dotfiles" },
-		{ key = "c", path = "~/.config", desc = "Config files" },
 		{ key = "d", path = "~/Downloads", desc = "Downloads" },
 		{ key = "o", path = "~/Documents/masaki39-core", desc = "Obsidian" },
 		{ key = "p", path = "~/pCloud Drive", desc = "pCloud Drive" },
-		{ key = "w", path = "~/pCloud Drive/Work", desc = "Work" },
-		{ key = "a", path = "~/dev/analysis", desc = "Analysis" },
-		{ key = "g", path = "~/ghq/github.com/masaki39", desc = "GitHub" },
+		{ key = "q", path = "~/ghq/github.com/masaki39", desc = "GitHub" },
 	},
 	desc_strategy = "path", -- If desc isn't present, use "path" or "filename", default is "path"
 	ephemeral = true, -- Enable ephemeral hops, default is true
