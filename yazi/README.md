@@ -12,5 +12,5 @@ ya pkg install
 
 ```bash
 brew upgrade yazi
-ya pkg upgrade yazi-rs/plugins:smart-enter orhnk/system-clipboard yazi-rs/plugins:git masaki39/ghq
+ya pkg upgrade yazi-rs/plugins:smart-enter orhnk/system-clipboard yazi-rs/plugins:git masaki39/ghq masaki39/fd-fzf
 ```

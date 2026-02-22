@@ -18,5 +18,10 @@ use = "masaki39/ghq"
 rev = "f531ffb"
 hash = "2d89eed279daeb9ea3779d60b86421ff"
 
+[[plugin.deps]]
+use = "masaki39/fd-fzf"
+rev = "fca0cdc"
+hash = "246b472667fa4f1d5ead2315f645da4a"
+
 [flavor]
 deps = []
