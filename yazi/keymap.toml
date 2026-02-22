@@ -12,10 +12,6 @@ run = "shell 'cb paste' --block"
 desc = "Paste from clipboard"
 
 [[mgr.prepend_keymap]]
-on = "b"
-run = "plugin bunny"
-
-[[mgr.prepend_keymap]]
 on = ["s", "s"]
 run = "search --via=fd"
 desc = "Search"
