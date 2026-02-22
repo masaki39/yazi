@@ -11,7 +11,6 @@ require("bunny"):setup({
 		{ key = "h", path = "~", desc = "Home directory" },
 		{ key = ".", path = "~/ghq/github.com/masaki39/dotfiles", desc = "Dotfiles" },
 		{ key = "c", path = "~/.config", desc = "Config files" },
-		{ key = "v", path = "~/dev", desc = "Dev" },
 		{ key = "d", path = "~/Downloads", desc = "Downloads" },
 		{ key = "o", path = "~/Documents/masaki39-core", desc = "Obsidian" },
 		{ key = "p", path = "~/pCloud Drive", desc = "pCloud Drive" },
