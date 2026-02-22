@@ -3,7 +3,6 @@ BREW_PREFIX="$(brew --prefix)"
 export PATH="$BREW_PREFIX/bin:$PATH"
 export EDITOR='nvim'
 export VISUAL='nvim'
-export OBSIDIAN_DIR="$HOME/Documents/masaki39-core"
 
 # history
 HISTFILE="$HOME/.zsh_history"
