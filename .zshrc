@@ -43,6 +43,11 @@ gq() {
   fi
 }
 
+function ghb() {
+  local selected=$(gh repo list --limit 100 | fzf --prompt "gh repo: ")
+  [ -n "$selected" ] && gh repo view -w "$(echo "$selected" | awk '{print $1}')"
+}
+
 # git_root: get git root directory, fallback to current directory if not in a git repo
 function git_root() {
   git rev-parse --show-toplevel 2>/dev/null || pwd
