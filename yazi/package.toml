@@ -15,13 +15,13 @@ hash = "270915fa8282a19908449530ff66f7e2"
 
 [[plugin.deps]]
 use = "masaki39/ghq"
-rev = "f531ffb"
-hash = "2d89eed279daeb9ea3779d60b86421ff"
+rev = "fd9b8ca"
+hash = "62d92b9b62099567fc337d6b6cf48c06"
 
 [[plugin.deps]]
 use = "masaki39/fd-fzf"
-rev = "56fe573"
-hash = "a32b85adb0d14a447295e3ae399498be"
+rev = "1b32ebc"
+hash = "2a4d740aa258e791d440cabdf8db5a24"
 
 [flavor]
 deps = []
