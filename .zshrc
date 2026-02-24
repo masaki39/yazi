@@ -61,7 +61,7 @@ function git_root() {
 function _zellij_attach() {
   cd "$(git_root)"
   local session_name=$(basename "$(pwd)")
-  zellij delete-session "$session_name" 2>/dev/null
+  zellij delete-session "$session_name" 2>/dev/null # delete-session command doesn't delete active session
   zellij --layout "$1" attach --create "$session_name"
 }
 
@@ -104,7 +104,7 @@ function y() {
 # fzf
 source <(fzf --zsh)
 # zoxide
-eval "$(zoxide init zsh --cmd cd)"
+eval "$(zoxide init zsh)"
 # starship
 eval "$(starship init zsh)"
 # zsh-autosuggestions
