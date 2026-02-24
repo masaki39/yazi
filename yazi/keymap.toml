@@ -42,7 +42,7 @@ run = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"'
 desc = "Git Root"
 
 [[mgr.prepend_keymap]]
-on = ["g", "q"]
+on = ["g", "v"]
 run = "plugin ghq"
 desc = "Go ghq repo"
 

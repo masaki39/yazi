@@ -36,7 +36,7 @@ alias drm='docker rm $(docker ps -aq)'
 alias p='nvim "/tmp/prompt_$(date +%Y%m%d%H%M%S).md" -c startinsert -c "autocmd VimLeave * silent! %y +"'
 
 # ghq fzf
-function gq() {
+function ghv() {
   local target=$(ghq list | fzf)
   if [ -n "$target" ]; then
     cd "$(ghq root)/$target"
