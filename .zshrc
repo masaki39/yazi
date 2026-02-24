@@ -36,16 +36,20 @@ alias drm='docker rm $(docker ps -aq)'
 alias p='nvim "/tmp/prompt_$(date +%Y%m%d%H%M%S).md" -c startinsert -c "autocmd VimLeave * silent! %y +"'
 
 # ghq fzf
-gq() {
-  local target=$(ghq list -p | fzf)
+function gq() {
+  local target=$(ghq list | fzf)
   if [ -n "$target" ]; then
-    cd "$target"
+    cd "$(ghq root)/$target"
   fi
 }
 
 function ghb() {
-  local selected=$(gh repo list --limit 100 | fzf --prompt "gh repo: ")
-  [ -n "$selected" ] && gh repo view -w "$(echo "$selected" | awk '{print $1}')"
+  local selected=$(gh repo list --limit 100 --json nameWithOwner --jq '.[].nameWithOwner' | \
+    fzf --prompt "gh repo: " \
+        --preview "gh repo view {} | bat --color=always --style=plain --language=markdown" \
+        --preview-window=right:60%:wrap)
+
+  [ -n "$selected" ] && gh repo view -w "$selected"
 }
 
 # git_root: get git root directory, fallback to current directory if not in a git repo
