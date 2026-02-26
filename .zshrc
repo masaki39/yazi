@@ -71,7 +71,10 @@ function _zellij_attach() {
 # zellij fzf layout launcher
 function zz() {
   local layout_dir="${ZELLIJ_CONFIG_DIR:-$HOME/.config/zellij}/layouts"
-  local selected=$(ls "$layout_dir" | sed 's/\.kdl$//' | { cat; echo "welcome"; } | fzf --prompt="zellij layout: ")
+  local selected=$(ls "$layout_dir" | sed 's/\.kdl$//' | { cat; echo "welcome"; } | fzf \
+    --prompt="zellij layout: " \
+    --preview "[ '{}' = 'welcome' ] && echo 'Zellij Welcome Session' || bat --color=always --style=plain '$layout_dir/{}.kdl' 2>/dev/null" \
+    --preview-window=right:50%)
   [ -z "$selected" ] && return
   if [ "$selected" = "welcome" ]; then
     zellij delete-session welcome 2>/dev/null
