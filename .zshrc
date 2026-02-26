@@ -40,7 +40,7 @@ function ghv() {
   local root=$(ghq root)
   local target=$(ghq list | fzf \
     --preview "eza --tree --color=always --icons --level=2 '$root/{}'" \
-    --preview-window=right:50%)
+    --preview-window=right:60%)
   if [ -n "$target" ]; then
     cd "$root/$target"
   fi
@@ -73,8 +73,8 @@ function zz() {
   local layout_dir="${ZELLIJ_CONFIG_DIR:-$HOME/.config/zellij}/layouts"
   local selected=$(ls "$layout_dir" | sed 's/\.kdl$//' | { cat; echo "welcome"; } | fzf \
     --prompt="zellij layout: " \
-    --preview "[ '{}' = 'welcome' ] && echo 'Zellij Welcome Session' || bat --color=always --style=plain '$layout_dir/{}.kdl' 2>/dev/null" \
-    --preview-window=right:50%)
+    --preview "[ '{}' = 'welcome' ] && echo 'Zellij Welcome Session' || bat --color=always --style=plain --language=toml '$layout_dir/{}.kdl' 2>/dev/null" \
+    --preview-window=right:60%)
   [ -z "$selected" ] && return
   if [ "$selected" = "welcome" ]; then
     zellij delete-session welcome 2>/dev/null
