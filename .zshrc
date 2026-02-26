@@ -37,9 +37,12 @@ alias p='nvim "/tmp/prompt_$(date +%Y%m%d%H%M%S).md" -c startinsert -c "autocmd 
 
 # ghq fzf
 function ghv() {
-  local target=$(ghq list | fzf)
+  local root=$(ghq root)
+  local target=$(ghq list | fzf \
+    --preview "eza --tree --color=always --icons --level=2 '$root/{}'" \
+    --preview-window=right:50%)
   if [ -n "$target" ]; then
-    cd "$(ghq root)/$target"
+    cd "$root/$target"
   fi
 }
 
