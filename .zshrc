@@ -37,9 +37,12 @@ alias p='nvim "/tmp/prompt_$(date +%Y%m%d%H%M%S).md" -c startinsert -c "autocmd 
 
 # ghq fzf
 function ghv() {
-  local target=$(ghq list | fzf)
+  local root=$(ghq root)
+  local target=$(ghq list | fzf \
+    --preview "eza --tree --color=always --icons --level=2 '$root/{}'" \
+    --preview-window=right:60%)
   if [ -n "$target" ]; then
-    cd "$(ghq root)/$target"
+    cd "$root/$target"
   fi
 }
 
@@ -68,7 +71,10 @@ function _zellij_attach() {
 # zellij fzf layout launcher
 function zz() {
   local layout_dir="${ZELLIJ_CONFIG_DIR:-$HOME/.config/zellij}/layouts"
-  local selected=$(ls "$layout_dir" | sed 's/\.kdl$//' | { cat; echo "welcome"; } | fzf --prompt="zellij layout: ")
+  local selected=$(ls "$layout_dir" | sed 's/\.kdl$//' | { cat; echo "welcome"; } | fzf \
+    --prompt="zellij layout: " \
+    --preview "[ '{}' = 'welcome' ] && echo 'Zellij Welcome Session' || bat --color=always --style=plain --language=toml '$layout_dir/{}.kdl' 2>/dev/null" \
+    --preview-window=right:60%)
   [ -z "$selected" ] && return
   if [ "$selected" = "welcome" ]; then
     zellij delete-session welcome 2>/dev/null
