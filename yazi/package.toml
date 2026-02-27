@@ -15,13 +15,13 @@ hash = "26db011a778f261d730d4f5f8bf24b3f"
 
 [[plugin.deps]]
 use = "masaki39/ghq"
-rev = "fd9b8ca"
-hash = "62d92b9b62099567fc337d6b6cf48c06"
+rev = "488f7f4"
+hash = "146472f90631578a7b8186e040b88302"
 
 [[plugin.deps]]
 use = "masaki39/fd-fzf"
-rev = "faaa1e5"
-hash = "42b9fbfccd737842aa15edd0ab519df8"
+rev = "fefe663"
+hash = "aff40de6cfb09b9f31691cb2b8ba6527"
 
 [[plugin.deps]]
 use = "Rolv-Apneseth/starship"
