@@ -56,7 +56,7 @@ function gb() {
 }
 
 # git_root: get git root directory, fallback to current directory if not in a git repo
-function git_root() {
+function _git_root() {
   git rev-parse --show-toplevel 2>/dev/null || pwd
 }
 
