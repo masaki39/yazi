@@ -36,7 +36,7 @@ alias drm='docker rm $(docker ps -aq)'
 alias p='nvim "/tmp/prompt_$(date +%Y%m%d%H%M%S).md" -c startinsert -c "autocmd VimLeave * silent! %y +"'
 
 # ghq fzf
-function ghv() {
+function gv() {
   local root=$(ghq root)
   local target=$(ghq list | fzf \
     --preview "eza --tree --color=always --icons --level=2 '$root/{}'" \
@@ -46,7 +46,7 @@ function ghv() {
   fi
 }
 
-function ghb() {
+function gb() {
   local selected=$(gh repo list --limit 100 --json nameWithOwner --jq '.[].nameWithOwner' | \
     fzf --prompt "gh repo: " \
         --preview "gh repo view {} | bat --color=always --style=plain --language=markdown" \
