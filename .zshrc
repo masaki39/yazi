@@ -109,6 +109,7 @@ function y() {
 
 # fzf
 source <(fzf --zsh)
+export FZF_DEFAULT_COMMAND='fd --type f'
 # zoxide
 eval "$(zoxide init zsh)"
 # starship
