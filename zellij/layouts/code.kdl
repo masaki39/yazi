@@ -15,10 +15,11 @@ layout {
         pane split_direction="vertical" {
             // 左側: yazi + terminal (70%)
             pane size="70%" split_direction="horizontal" {
-                // 上: yazi (70%)
+                // 上: nvim (70%)
                 pane size="70%" {
+                    name "Neovim"
                     command "nvim"
-                    args "-c" "lua vim.schedule(function() Snacks.picker.files() end)"
+                    args "-c" "lua require('snacks').picker.files()"
                 }
                 // 下: terminal 2つ (30%)
                 pane size="30%" split_direction="vertical" {
