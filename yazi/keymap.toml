@@ -28,8 +28,13 @@ desc = "Search files"
 
 [[mgr.prepend_keymap]]
 on = ["s", "z"]
-run = "plugin fd-fzf"
+run = "plugin fd-fzf preview"
 desc = "Jump to directory"
+
+[[mgr.prepend_keymap]]
+on = ["s", "Z"]
+run = "plugin fd-fzf hidden_preview"
+desc = "Jump to directory (hidden)"
 
 [[mgr.prepend_keymap]]
 on = ["g", "g"]

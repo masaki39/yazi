@@ -20,8 +20,8 @@ hash = "146472f90631578a7b8186e040b88302"
 
 [[plugin.deps]]
 use = "masaki39/fd-fzf"
-rev = "fefe663"
-hash = "aff40de6cfb09b9f31691cb2b8ba6527"
+rev = "27e53d6"
+hash = "953a577b4674469160d342ea325f5a48"
 
 [[plugin.deps]]
 use = "Rolv-Apneseth/starship"
