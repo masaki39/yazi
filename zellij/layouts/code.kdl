@@ -17,8 +17,8 @@ layout {
             pane size="70%" split_direction="horizontal" {
                 // 上: yazi (70%)
                 pane size="70%" {
-                    command "bash"
-                    args "-c" "exec yazi"
+                    command "nvim"
+                    args "-c" "lua vim.schedule(function() Snacks.picker.files() end)"
                 }
                 // 下: terminal 2つ (30%)
                 pane size="30%" split_direction="vertical" {
