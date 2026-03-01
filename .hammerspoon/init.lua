@@ -3,6 +3,18 @@ spoon.ReloadConfiguration:start()
 
 local jinrai = dofile("/Users/masaki/ghq/github.com/tadashi-aikawa/jinrai/init.lua")
 
+-- Ryoiki: window layout manager
+hs.loadSpoon("SpoonInstall")
+spoon.SpoonInstall.repos.masaki39 = {
+    url = "https://github.com/masaki39/ryoiki",
+    desc = "masaki39's Hammerspoon Spoons",
+}
+spoon.SpoonInstall:andUse("Ryoiki", {
+    repo = "masaki39",
+    start = true,
+    hotkeys = { showChooser = { { "ctrl", "alt" }, "space" } },
+})
+
 jinrai.setup({
 	focus_border = {
 		borderWidth = 10,
@@ -56,5 +68,10 @@ jinrai.setup({
 		hotkeyModifiers = { "alt" },
 		hotkeyKey = "w",
 		centerCursor = true,
+		stateSync = {
+			interval = 0.15,
+			targetApps = { "com.mitchellh.ghostty" },
+			historyScope = "application",
+		},
 	},
 })
