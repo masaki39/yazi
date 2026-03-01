@@ -1,6 +1,6 @@
 // coding.kdl
 keybind "ctrl+alt+1"
-description "Dev: dev layout for me"
+description "Dev: Ghostty and Google Chrome" 
 hide_others false
 
 window {
@@ -12,15 +12,6 @@ window {
     h "100%"
     reuse true
     focus true
-}
-window {
-    app "Obsidian"
-    screen 0
-    x "0%"
-    y "0%"
-    w "100%"
-    h "100%"
-    reuse true
 }
 window {
     app "Google Chrome"

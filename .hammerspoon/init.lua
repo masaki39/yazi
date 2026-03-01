@@ -8,7 +8,6 @@ spoon.SpoonInstall.repos.masaki39 = {
 	desc = "masaki39's Hammerspoon Spoons",
 	branch = "main",
 }
-spoon.SpoonInstall:updateAllRepos()
 spoon.SpoonInstall:andUse("Ryoiki", {
 	repo = "masaki39",
 	start = true,
@@ -56,6 +55,9 @@ jinrai.setup({
 			"B",
 			"N",
 			"M",
+		},
+		appPrefixOverrides = {
+			["Google Chrome"] = "C",
 		},
 		hotkeyModifiers = { "alt" },
 		hotkeyKey = "tab",

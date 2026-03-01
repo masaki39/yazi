@@ -5,11 +5,20 @@ hide_others true
 
 window {
     app "Obsidian"
-    screen 0
+    screen 1
     x "0%"
     y "0%"
     w "100%"
     h "100%"
     reuse true
     focus true
+}
+window {
+    app "Ghostty"
+    screen 0
+    x "0%"
+    y "0%"
+    w "100%"
+    h "100%"
+    reuse true
 }

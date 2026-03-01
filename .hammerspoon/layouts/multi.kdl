@@ -8,26 +8,26 @@ window {
     screen 1
     x "0%"
     y "0%"
-    w "60%"
+    w "50%"
     h "100%"
     reuse true
     focus true
 }
 window {
     app "Obsidian"
-    screen 1
-    x "60%"
+    screen 0
+    x "0%"
     y "0%"
-    w "40%"
+    w "100%"
     h "100%"
     reuse true
 }
 window {
     app "Ghostty"
-    screen 0
-    x "0%"
+    screen 1
+    x "50%"
     y "0%"
-    w "100%"
+    w "50%"
     h "100%"
     reuse true
 }
