@@ -16,6 +16,7 @@ ln -sf "$DOTFILES/yazi" ~/.config/yazi
 ln -sf "$DOTFILES/ghostty" ~/.config/ghostty
 ln -sf "$DOTFILES/zellij" ~/.config/zellij
 ln -sf "$DOTFILES/nvim" ~/.config/nvim
+ln -sf "$DOTFILES/.hammerspoon" ~/.config/.hammerspoon
 
 # Install yazi plugins
 bash "$DOTFILES/yazi/install.sh"
