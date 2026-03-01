@@ -1,11 +1,11 @@
 // reference.kdl
 keybind "ctrl+alt+3"
 description "Reference: Chrome left, Obsidian right"
-hide_others false
+hide_others true
 
 window {
     app "Google Chrome"
-    screen 0
+    screen 1
     x "0%"
     y "0%"
     w "60%"
@@ -15,10 +15,19 @@ window {
 }
 window {
     app "Obsidian"
-    screen 0
+    screen 1
     x "60%"
     y "0%"
     w "40%"
+    h "100%"
+    reuse true
+}
+window {
+    app "Ghostty"
+    screen 0
+    x "0%"
+    y "0%"
+    w "100%"
     h "100%"
     reuse true
 }
