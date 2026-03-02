@@ -11,7 +11,7 @@ spoon.SpoonInstall.repos.masaki39 = {
 spoon.SpoonInstall:andUse("Ryoiki", {
 	repo = "masaki39",
 	start = true,
-	hotkeys = { showChooser = { { "ctrl", "alt" }, "tab" } },
+	hotkeys = { showChooser = { { "ctrl", "alt" }, "space" } },
 })
 
 local jinrai = dofile("/Users/masaki/ghq/github.com/tadashi-aikawa/jinrai/init.lua")
@@ -73,8 +73,8 @@ jinrai.setup({
 			downLeft = "b",
 			downRight = "n",
 		},
-		hotkeyModifiers = { "alt" },
-		hotkeyKey = "tab",
+		hotkeyModifiers = { "alt", "shift", "cmd", "ctrl" },
+		hotkeyKey = "j",
 		iconSize = 72,
 		titleMaxSize = 72,
 		centerCursor = true,
@@ -83,8 +83,8 @@ jinrai.setup({
 		end,
 	},
 	focus_back = {
-		hotkeyModifiers = { "option" },
-		hotkeyKey = "w",
+		hotkeyModifiers = { "option", "shift", "cmd", "ctrl" },
+		hotkeyKey = "tab",
 		centerCursor = true,
 		stateSync = {
 			interval = 0.15,
