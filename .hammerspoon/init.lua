@@ -1,6 +1,11 @@
 hs.loadSpoon("ReloadConfiguration")
 spoon.ReloadConfiguration:start()
 
+hs.loadSpoon("PopupTranslateSelection")
+spoon.PopupTranslateSelection:bindHotkeys({
+	translate_to_ja = { { "alt", "cmd", "shift", "ctrl" }, "t" },
+})
+
 -- Ryoiki: window layout manager
 hs.loadSpoon("SpoonInstall")
 spoon.SpoonInstall.repos.masaki39 = {
