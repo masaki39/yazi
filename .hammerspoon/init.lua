@@ -99,6 +99,14 @@ jinrai.setup({
 	},
 })
 
+-- ===== EjectMenu =====
+hs.loadSpoon("EjectMenu")
+spoon.EjectMenu.never_eject = { "/Users/masaki/pCloud Drive" }
+spoon.EjectMenu:bindHotkeys({
+	ejectAll = { { "ctrl", "alt", "shift", "cmd" }, "e" },
+})
+spoon.EjectMenu:start()
+
 -- ===== Caffeinate =====
 caffeine = hs.menubar.new()
 function setCaffeineDisplay(state)
