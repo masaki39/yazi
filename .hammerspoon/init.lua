@@ -93,3 +93,33 @@ jinrai.setup({
 		},
 	},
 })
+
+-- ===== Caffeinate =====
+caffeine = hs.menubar.new()
+function setCaffeineDisplay(state)
+	if state then
+		caffeine:setTitle("AWAKE")
+	else
+		caffeine:setTitle("SLEEPY")
+	end
+end
+
+function caffeineClicked()
+	setCaffeineDisplay(hs.caffeinate.toggle("displayIdle"))
+end
+
+if caffeine then
+	caffeine:setClickCallback(caffeineClicked)
+	setCaffeineDisplay(hs.caffeinate.get("displayIdle"))
+end
+
+-- Auto-switch to English IME on app focus change
+local _imeAppWatcher = hs.application.watcher.new(function(_, event, _)
+	if event == hs.application.watcher.activated then
+		local src = hs.keycodes.currentSourceID()
+		if src and src:find("Japanese") then
+			hs.keycodes.currentSourceID("com.apple.keylayout.ABC")
+		end
+	end
+end)
+_imeAppWatcher:start()
