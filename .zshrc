@@ -63,7 +63,7 @@ function _git_root() {
 
 # zellij attach template (session name = git root dir)
 function _zellij_attach() {
-  cd "$(git_root)"
+  cd "$(_git_root)"
   local session_name=$(basename "$(pwd)")
   zellij delete-session "$session_name" 2>/dev/null # delete-session command doesn't delete active session
   zellij --layout "$1" attach --create "$session_name"
