@@ -62,6 +62,8 @@ jinrai.setup({
 				prefix = "C",
 			},
 		},
+		focusBackKey = "tab",
+		directionKeys = { left = "left", down = "down", up = "up", right = "right" },
 		hotkeyModifiers = { "alt" },
 		hotkeyKey = "tab",
 		iconSize = 72,
