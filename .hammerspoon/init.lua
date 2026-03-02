@@ -1,13 +1,14 @@
-hs.loadSpoon("ReloadConfiguration")
-spoon.ReloadConfiguration:start()
+hs.loadSpoon("SpoonInstall")
 
-hs.loadSpoon("PopupTranslateSelection")
-spoon.PopupTranslateSelection:bindHotkeys({
-	translate_to_ja = { { "alt", "cmd", "shift", "ctrl" }, "t" },
+spoon.SpoonInstall:andUse("ReloadConfiguration", { start = true })
+
+spoon.SpoonInstall:andUse("PopupTranslateSelection", {
+	hotkeys = {
+		translate_to_ja = { { "alt", "cmd", "shift", "ctrl" }, "t" },
+	},
 })
 
 -- Ryoiki: window layout manager
-hs.loadSpoon("SpoonInstall")
 spoon.SpoonInstall.repos.masaki39 = {
 	url = "https://github.com/masaki39/ryoiki",
 	desc = "masaki39's Hammerspoon Spoons",
@@ -100,12 +101,11 @@ jinrai.setup({
 })
 
 -- ===== EjectMenu =====
-hs.loadSpoon("EjectMenu")
-spoon.EjectMenu.never_eject = { "/Users/masaki/pCloud Drive" }
-spoon.EjectMenu:bindHotkeys({
-	ejectAll = { { "ctrl", "alt", "shift", "cmd" }, "e" },
+spoon.SpoonInstall:andUse("EjectMenu", {
+	config = { never_eject = { "/Users/masaki/pCloud Drive" } },
+	hotkeys = { ejectAll = { { "ctrl", "alt", "shift", "cmd" }, "e" } },
+	start = true,
 })
-spoon.EjectMenu:start()
 
 -- ===== Caffeinate =====
 caffeine = hs.menubar.new()
