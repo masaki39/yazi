@@ -87,6 +87,7 @@ jinrai.setup({
 		},
 		hotkeyModifiers = { "alt", "shift", "cmd", "ctrl" },
 		hotkeyKey = "j",
+		swapWindowFrameSelectModifiers = { "shift" },
 		iconSize = 72,
 		titleMaxSize = 72,
 		centerCursor = true,
