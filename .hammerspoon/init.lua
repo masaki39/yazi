@@ -2,6 +2,12 @@ hs.loadSpoon("SpoonInstall")
 
 spoon.SpoonInstall:andUse("ReloadConfiguration", { start = true })
 
+spoon.SpoonInstall:andUse("EjectMenu", {
+	config = { never_eject = { "/Users/masaki/pCloud Drive" } },
+	hotkeys = { ejectAll = { { "ctrl", "alt", "shift", "cmd" }, "e" } },
+	start = true,
+})
+
 spoon.SpoonInstall:andUse("PopupTranslateSelection", {
 	hotkeys = {
 		translate_to_ja = { { "alt", "cmd", "shift", "ctrl" }, "t" },
@@ -99,32 +105,6 @@ jinrai.setup({
 		},
 	},
 })
-
--- ===== EjectMenu =====
-spoon.SpoonInstall:andUse("EjectMenu", {
-	config = { never_eject = { "/Users/masaki/pCloud Drive" } },
-	hotkeys = { ejectAll = { { "ctrl", "alt", "shift", "cmd" }, "e" } },
-	start = true,
-})
-
--- ===== Caffeinate =====
-caffeine = hs.menubar.new()
-function setCaffeineDisplay(state)
-	if state then
-		caffeine:setTitle("AWAKE")
-	else
-		caffeine:setTitle("SLEEPY")
-	end
-end
-
-function caffeineClicked()
-	setCaffeineDisplay(hs.caffeinate.toggle("displayIdle"))
-end
-
-if caffeine then
-	caffeine:setClickCallback(caffeineClicked)
-	setCaffeineDisplay(hs.caffeinate.get("displayIdle"))
-end
 
 -- Auto-switch to English IME on app focus change
 local _imeAppWatcher = hs.application.watcher.new(function(_, event, _)
