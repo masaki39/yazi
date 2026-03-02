@@ -29,7 +29,7 @@ bindkey '^[[B' down-line-or-beginning-search
 # aliases
 alias ze="$EDITOR $HOME/.zshrc"
 alias zs="source $HOME/.zshrc"
-alias gr='cd "$(git_root)"'
+alias gr='cd "$(_git_root)"'
 alias gg="lazygit"
 alias dstop='docker stop $(docker ps -q)'
 alias drm='docker rm $(docker ps -aq)'
@@ -56,7 +56,7 @@ function gb() {
   [ -n "$selected" ] && gh repo view -w "$selected"
 }
 
-# git_root: get git root directory, fallback to current directory if not in a git repo
+# _git_root: get git root directory, fallback to current directory if not in a git repo
 function _git_root() {
   git rev-parse --show-toplevel 2>/dev/null || pwd
 }
