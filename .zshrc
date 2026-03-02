@@ -1,8 +1,8 @@
 # PATH
 BREW_PREFIX="$(brew --prefix)"
 export PATH="$BREW_PREFIX/bin:$PATH"
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='nvim -c startinsert'
+export VISUAL='nvim -c startinsert'
 
 # history
 HISTFILE="$HOME/.zsh_history"
