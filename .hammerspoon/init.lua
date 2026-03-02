@@ -57,7 +57,10 @@ jinrai.setup({
 			"M",
 		},
 		appPrefixOverrides = {
-			["Google Chrome"] = "C",
+			{
+				match = { bundleID = "com.google.Chrome" },
+				prefix = "C",
+			},
 		},
 		hotkeyModifiers = { "alt" },
 		hotkeyKey = "tab",
@@ -69,7 +72,7 @@ jinrai.setup({
 		end,
 	},
 	focus_back = {
-		hotkeyModifiers = { "alt" },
+		hotkeyModifiers = { "option" },
 		hotkeyKey = "w",
 		centerCursor = true,
 		stateSync = {
