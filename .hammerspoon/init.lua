@@ -23,7 +23,7 @@ spoon.SpoonInstall.repos.masaki39 = {
 spoon.SpoonInstall:andUse("Ryoiki", {
 	repo = "masaki39",
 	start = true,
-	hotkeys = { showChooser = { { "ctrl", "alt" }, "space" } },
+	hotkeys = { showChooser = { { "ctrl", "alt" }, "m" } },
 })
 
 local jinrai = dofile("/Users/masaki/ghq/github.com/tadashi-aikawa/jinrai/init.lua")
