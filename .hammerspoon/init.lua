@@ -106,14 +106,3 @@ jinrai.setup({
 		},
 	},
 })
-
--- Auto-switch to English IME on app focus change
-local _imeAppWatcher = hs.application.watcher.new(function(_, event, _)
-	if event == hs.application.watcher.activated then
-		local src = hs.keycodes.currentSourceID()
-		if src and src:find("Japanese") then
-			hs.keycodes.currentSourceID("com.apple.keylayout.ABC")
-		end
-	end
-end)
-_imeAppWatcher:start()
