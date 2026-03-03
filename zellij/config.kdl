@@ -134,22 +134,21 @@ keybinds clear-defaults=true {
         }
     }
     shared_except "locked" {
-        bind "Alt a" {
-            LaunchOrFocusPlugin "session-manager" {
-                floating true
-                move_to_focused_tab true
-            }
-        }
-        bind "Alt d" { Detach; }
         bind "Alt left" { MoveFocusOrTab "left"; }
         bind "Alt down" { MoveFocus "down"; }
         bind "Alt up" { MoveFocus "up"; }
         bind "Alt right" { MoveFocusOrTab "right"; }
+        bind "Alt Shift Ctrl left" { Resize "Increase left"; }
+        bind "Alt Shift Ctrl down" { Resize "Increase down"; }
+        bind "Alt Shift Ctrl up" { Resize "Increase up"; }
+        bind "Alt Shift Ctrl right" { Resize "Increase right"; }
         bind "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt =" { Resize "Increase"; }
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
+        bind "Alt d" { NewPane "right"; SwitchToMode "normal"; }
+        bind "Alt Shift d" { NewPane "down"; SwitchToMode "normal"; }
         bind "Alt f" { ToggleFloatingPanes; }
         bind "Alt g" { SwitchToMode "locked"; }
         bind "Alt h" { MoveFocusOrTab "left"; }
@@ -163,7 +162,9 @@ keybinds clear-defaults=true {
         bind "Alt Shift p" { ToggleGroupMarking; }
         bind "Alt Shift left" { GoToPreviousTab; }
         bind "Alt Shift right" { GoToNextTab; }
+        bind "Alt w" { CloseFocus; SwitchToMode "normal"; }
         bind "Alt q" { Quit; }
+        bind "Alt Shift w" { CloseTab; SwitchToMode "normal"; }
         bind "Alt z" { ToggleFocusFullscreen; }
     }
     shared_except "locked" "move" {
