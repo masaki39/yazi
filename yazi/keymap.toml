@@ -12,6 +12,14 @@ run = "shell 'cb paste' --block"
 desc = "Paste from clipboard"
 
 [[mgr.prepend_keymap]]
+on = "<C-v>"
+run = "shell -- qlmanage -p %s"
+
+[[mgr.prepend_keymap]]
+on = "q"
+run = "plugin confirm-quit"
+
+[[mgr.prepend_keymap]]
 on = ["s", "s"]
 run = 'search --via=fd --args="--no-hidden"'
 desc = "Search"
