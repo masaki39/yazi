@@ -21,8 +21,24 @@ prepend_rules = [
 ]
 
 [plugin]
-prepend_previewers = [{ mime = "image/tiff", run = "magick" }]
+prepend_previewers = [
+  { mime = "image/tiff", run = "magick" },
+  # Office Documents
+  { mime = "application/openxmlformats-officedocument.*", run = "office" },
+  { mime = "application/oasis.opendocument.*", run = "office" },
+  { mime = "application/ms-*", run = "office" },
+  { mime = "application/msword", run = "office" },
+  { name = "*.docx", run = "office" },
+]
 append_previewers = [{ name = "*.jsonl", run = "json" }]
+prepend_preloaders = [
+  # Office Documents
+  { mime = "application/openxmlformats-officedocument.*", run = "office" },
+  { mime = "application/oasis.opendocument.*", run = "office" },
+  { mime = "application/ms-*", run = "office" },
+  { mime = "application/msword", run = "office" },
+  { name = "*.docx", run = "office" },
+]
 
 [[plugin.prepend_fetchers]]
 id = "git"
