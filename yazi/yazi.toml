@@ -9,43 +9,16 @@ max_height = 1920
 [opener]
 edit = [{ run = 'nvim "$@"', block = true, for = "unix" }]
 csvlens = [{ run = 'csvlens "$@"', block = true, for = "unix" }]
-default = [{ run = 'open "$@"', block = false, for = "unix" }]
 
 [open]
-prepend_rules = [
-  { mime = "text/csv", use = "csvlens" },
-  { name = "*.pptx", use = "default" },
-  { mime = "text/html", use = "default" },
-  { name = "*.MP4", use = "default" },
-  { name = "*.mp4", use = "default" },
-]
+prepend_rules = [{ mime = "text/csv", use = "csvlens" }]
 
 [plugin]
-prepend_previewers = [
+append_previewers = [
   { mime = "image/tiff", run = "magick" },
-  # Office Documents
-  { mime = "application/openxmlformats-officedocument.*", run = "office" },
-  { mime = "application/oasis.opendocument.*", run = "office" },
-  { mime = "application/ms-*", run = "office" },
-  { mime = "application/msword", run = "office" },
-  { name = "*.docx", run = "office" },
+  { name = "*.jsonl", run = "json" },
 ]
-append_previewers = [{ name = "*.jsonl", run = "json" }]
-prepend_preloaders = [
-  # Office Documents
-  { mime = "application/openxmlformats-officedocument.*", run = "office" },
-  { mime = "application/oasis.opendocument.*", run = "office" },
-  { mime = "application/ms-*", run = "office" },
-  { mime = "application/msword", run = "office" },
-  { name = "*.docx", run = "office" },
+prepend_fetchers = [
+  { id = "git", url = "*", run = "git" },
+  { id = "git", url = "*/", run = "git" },
 ]
-
-[[plugin.prepend_fetchers]]
-id = "git"
-url = "*"
-run = "git"
-
-[[plugin.prepend_fetchers]]
-id = "git"
-url = "*/"
-run = "git"
