@@ -37,37 +37,13 @@ spoon.SpoonInstall:andUse("Jinrai", {
 	repo = "jinrai",
 	fn = function(jinrai)
 		jinrai:setup({
-			focus_border = {
-				visual = {
-					border = {
-						width = 10,
-						color = { red = 0.40, green = 0.68, blue = 0.98, alpha = 0.95 },
-					},
-					outline = {
-						width = 2,
-						color = { red = 0, green = 0, blue = 0, alpha = 0.70 },
-					},
-					cornerRadius = 10,
-				},
-				animation = {
-					duration = 0.5,
-					fadeSteps = 18,
-				},
-				window = {
-					minSize = 480,
-				},
-			},
+			focus_border = {},
 			window_hints = {
 				hotkey = {
 					modifiers = { "alt", "shift", "cmd", "ctrl" },
 					key = "j",
 				},
 				hint = {
-					chars = {
-						"A", "S", "D", "F", "G", "H", "J", "K", "L",
-						"Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P",
-						"Z", "X", "C", "V", "B", "N", "M",
-					},
 					prefixOverrides = {
 						{
 							match = { bundleID = "com.google.Chrome" },
@@ -77,16 +53,6 @@ spoon.SpoonInstall:andUse("Jinrai", {
 				},
 				navigation = {
 					focusBackKey = "tab",
-					directionKeys = {
-						left = "h",
-						down = "j",
-						up = "k",
-						right = "l",
-						upLeft = "y",
-						upRight = "u",
-						downLeft = "b",
-						downRight = "n",
-					},
 					directHotkeys = {
 						modifiers = { "ctrl", "alt", "shift", "cmd" },
 						keys = {
@@ -97,10 +63,6 @@ spoon.SpoonInstall:andUse("Jinrai", {
 						},
 					},
 					swapSelectModifiers = { "shift" },
-				},
-				ui = {
-					icon = { size = 72 },
-					text = { titleMaxSize = 72 },
 				},
 				behavior = {
 					centerCursor = true,

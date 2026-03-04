@@ -4,6 +4,9 @@
 
 local map = vim.keymap.set
 
+-- 右クリックを無効化（Inspectポップアップを防ぐ）
+map({ "n", "v", "i" }, "<RightMouse>", "<Nop>", {})
+
 -- Move Lines
 map("n", "<C-S-Down>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
 map("n", "<C-S-Up>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
