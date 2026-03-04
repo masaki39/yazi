@@ -15,13 +15,13 @@ spoon.SpoonInstall:andUse("PopupTranslateSelection", {
 })
 
 -- Ryoiki: window layout manager
-spoon.SpoonInstall.repos.masaki39 = {
+spoon.SpoonInstall.repos.ryoiki = {
 	url = "https://github.com/masaki39/ryoiki",
-	desc = "masaki39's Hammerspoon Spoons",
+	desc = "Ryoiki Spoon repository",
 	branch = "main",
 }
 spoon.SpoonInstall:andUse("Ryoiki", {
-	repo = "masaki39",
+	repo = "ryoiki",
 	start = true,
 	hotkeys = { showChooser = { { "ctrl", "alt" }, "m" } },
 })
@@ -53,6 +53,16 @@ spoon.SpoonInstall:andUse("Jinrai", {
 				},
 				navigation = {
 					focusBackKey = "tab",
+					directionKeys = {
+						left = "h",
+						down = "j",
+						up = "k",
+						right = "l",
+						upLeft = "y",
+						upRight = "u",
+						downLeft = "b",
+						downRight = "n",
+					},
 					directHotkeys = {
 						modifiers = { "ctrl", "alt", "shift", "cmd" },
 						keys = {
@@ -62,13 +72,9 @@ spoon.SpoonInstall:andUse("Jinrai", {
 							right = "right",
 						},
 					},
-					swapSelectModifiers = { "shift" },
 				},
 				behavior = {
 					centerCursor = true,
-					onError = function(err)
-						hs.alert.show("Window Hints error: " .. tostring(err), 3)
-					end,
 				},
 			},
 			focus_back = {
