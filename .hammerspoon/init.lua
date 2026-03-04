@@ -1,18 +1,5 @@
 hs.loadSpoon("SpoonInstall")
-
 spoon.SpoonInstall:andUse("ReloadConfiguration", { start = true })
-
-spoon.SpoonInstall:andUse("EjectMenu", {
-	config = { never_eject = { "/Users/masaki/pCloud Drive" } },
-	hotkeys = { ejectAll = { { "ctrl", "alt", "shift", "cmd" }, "e" } },
-	start = true,
-})
-
-spoon.SpoonInstall:andUse("PopupTranslateSelection", {
-	hotkeys = {
-		translate_to_ja = { { "alt", "cmd", "shift", "ctrl" }, "t" },
-	},
-})
 
 -- Ryoiki: window layout manager
 spoon.SpoonInstall.repos.ryoiki = {
@@ -20,6 +7,7 @@ spoon.SpoonInstall.repos.ryoiki = {
 	desc = "Ryoiki Spoon repository",
 	branch = "main",
 }
+
 spoon.SpoonInstall:andUse("Ryoiki", {
 	repo = "ryoiki",
 	start = true,
