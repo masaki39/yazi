@@ -14,6 +14,27 @@ spoon.SpoonInstall:andUse("Ryoiki", {
 	hotkeys = { showChooser = { { "ctrl", "alt" }, "m" } },
 })
 
+spoon.SpoonInstall.repos.imecontrol = {
+	url = "https://github.com/masaki39/hammerspoon-ime-control",
+	desc = "ImeControl Spoon repository",
+	branch = "main",
+}
+spoon.SpoonInstall:andUse("ImeControl", {
+	repo = "imecontrol",
+	start = true,
+	hotkeys = {
+		toggle = { { "shift" }, "f12" },
+		debug = { { "shift" }, "f11" },
+	},
+	config = {
+		appRules = {
+			["com.apple.Terminal"] = "eng",
+			["com.mitchellh.ghostty"] = "eng",
+			["md.obsidian"] = "eng",
+		},
+	},
+})
+
 -- Jinrai
 spoon.SpoonInstall.repos.jinrai = {
 	url = "https://github.com/tadashi-aikawa/jinrai",
