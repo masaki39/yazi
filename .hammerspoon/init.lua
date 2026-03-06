@@ -31,6 +31,7 @@ spoon.SpoonInstall:andUse("ImeControl", {
 			["com.apple.Terminal"] = "eng",
 			["com.mitchellh.ghostty"] = "eng",
 			["md.obsidian"] = "eng",
+			["net.ankiweb.dtop"] = "eng",
 		},
 	},
 })
