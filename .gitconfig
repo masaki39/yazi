@@ -12,3 +12,11 @@
 	rebase = false
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+[merge]
+	conflictStyle = zdiff3
