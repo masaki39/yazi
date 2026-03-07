@@ -11,12 +11,14 @@ mkdir -p ~/.config
 # Symbolic links (force overwrite)
 ln -sf "$DOTFILES/.gitconfig" ~/.gitconfig
 ln -sf "$DOTFILES/.zshrc" ~/.zshrc
+ln -sf "$DOTFILES/.zshenv" ~/.zshenv
 ln -sf "$DOTFILES/ssh/config" ~/.ssh/config
 ln -sf "$DOTFILES/yazi" ~/.config/yazi
 ln -sf "$DOTFILES/ghostty" ~/.config/ghostty
 ln -sf "$DOTFILES/zellij" ~/.config/zellij
 ln -sf "$DOTFILES/nvim" ~/.config/nvim
 ln -sf "$DOTFILES/.hammerspoon" ~/.config/.hammerspoon
+ln -sf "$DOTFILES/lazygit" ~/.config/lazygit
 
 # Install yazi plugins
 bash "$DOTFILES/yazi/install.sh"
