@@ -1,7 +1,7 @@
 # https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
 
 customCommands:
-  - command: git cz
+  - command: czg
     context: files
     key: C
     output: terminal
