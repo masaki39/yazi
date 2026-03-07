@@ -2,7 +2,7 @@
 
 module.exports = {
   disableEmoji: false,
-  format: '{type}({scope}): {subject}',
+  format: '{type}{scope}: {subject}',
   list: ['feat', 'fix', 'chore', 'docs'],
   maxMessageLength: 64,
   minMessageLength: 3,
@@ -16,8 +16,11 @@ module.exports = {
     'yazi',
     'zellij',
     'hammerspoon',
+    'zsh',
+    'git',
     'brew',
     'setup',
+    'changelog',
   ],
   types: {
     feat: {
