@@ -3,7 +3,7 @@
 DOTFILES="$HOME/ghq/github.com/masaki39/dotfiles"
 
 # Homebrew
-brew bundle
+brew bundle --file="$DOTFILES/Brewfile"
 
 # Create directories
 mkdir -p ~/.config
