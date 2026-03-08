@@ -6,7 +6,6 @@ customCommands:
     key: C
     output: terminal
 gui:
-  language: "ja"
   showIcons: true
 # log customize
 git:
