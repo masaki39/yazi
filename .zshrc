@@ -29,7 +29,8 @@ bindkey '^[[B' down-line-or-beginning-search
 # aliases
 alias ze="$EDITOR $HOME/.zshrc"
 alias zs="source $HOME/.zshrc"
-alias gr='cd "$(_git_root)"'
+alias ls='eza --icons --group-directories-first'
+alias gr='cd "$(git rev-parse --show-toplevel 2>/dev/null || pwd)"'
 alias gg="lazygit"
 alias dstop='docker stop $(docker ps -q)'
 alias drm='docker rm $(docker ps -aq)'
@@ -55,14 +56,9 @@ function gb() {
   [ -n "$selected" ] && gh repo view -w "$selected"
 }
 
-# _git_root: get git root directory, fallback to current directory if not in a git repo
-function _git_root() {
-  git rev-parse --show-toplevel 2>/dev/null || pwd
-}
-
 # zellij attach template (session name = git root dir)
 function _zellij_attach() {
-  cd "$(_git_root)"
+  cd "$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
   local session_name=$(basename "$(pwd)")
   zellij delete-session "$session_name" 2>/dev/null # delete-session command doesn't delete active session
   zellij --layout "$1" attach --create "$session_name"
@@ -111,7 +107,7 @@ function y() {
 source <(fzf --zsh)
 export FZF_DEFAULT_COMMAND='fd --type f'
 # zoxide
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh --cmd cd)"
 # starship
 eval "$(starship init zsh)"
 # zsh-autosuggestions
