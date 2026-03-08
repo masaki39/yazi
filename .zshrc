@@ -119,6 +119,17 @@ source "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 # zsh-syntax-highlighting
 source "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
+# expand alias on enter (must be after plugins)
+expand-alias-and-accept-line() {
+  local words=(${(z)BUFFER})
+  if [[ -n ${aliases[$words[1]]} ]]; then
+    BUFFER="${aliases[$words[1]]}${BUFFER#${words[1]}}"
+    CURSOR=$#BUFFER
+  fi
+  zle .accept-line
+}
+zle -N accept-line expand-alias-and-accept-line
+
 # startup
 if [ -z "$ZELLIJ" ]; then
   fastfetch
