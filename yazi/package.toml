@@ -33,5 +33,10 @@ use = "masaki39/confirm-quit"
 rev = "f982283"
 hash = "95a05280a6e553fd7259519eaff0f773"
 
+[[plugin.deps]]
+use = "masaki39/git-time-machine"
+rev = "32adde7"
+hash = "43b8504df9423c9b85dc1cae214b16fc"
+
 [flavor]
 deps = []
