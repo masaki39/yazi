@@ -56,6 +56,34 @@ function dvc() {
 	devcontainer exec --workspace-folder . /bin/bash
 }
 
+# git file log: browse commit history of a file and restore
+function gfl() {
+  local file="$1"
+  [ -z "$file" ] && { echo "Usage: gfl <file>"; return 1; }
+  [ ! -f "$file" ] && { echo "File not found: $file"; return 1; }
+
+  local selected
+  selected=$(git log --format="%h%x09%ad %h %s" --date=format:"%Y-%m-%d %H:%M" --follow -- "$file" \
+    | fzf --delimiter='\t' \
+          --with-nth=2 \
+          --preview "git diff {1} HEAD -- \"$file\" | delta --paging=never" \
+          --header "ctrl-j/k: move  ctrl-r: clear enter: restore  esc: cancel" \
+          --bind "ctrl-r:clear-query+track-current" \
+          --bind "ctrl-j:down" \
+          --bind "ctrl-k:up")
+
+  [ -z "$selected" ] && return
+
+  local hash
+  hash=$(printf '%s' "$selected" | awk -F'\t' '{print $1}')
+  echo "Restore '$file' from $hash? [y/N] " >&2
+  read -r confirm < /dev/tty
+  [[ "$confirm" =~ ^[Yy]$ ]] || { echo "Cancelled." >&2; return; }
+
+  git restore --source="$hash" -- "$file"
+  echo "Restored '$file' from $hash." >&2
+}
+
 # yazi
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
