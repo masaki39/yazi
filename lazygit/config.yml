@@ -5,6 +5,10 @@ customCommands:
     context: files
     key: C
     output: terminal
+  - command: czg
+    context: files
+    key: c
+    output: terminal
 gui:
   showIcons: true
 # log customize
