@@ -36,6 +36,7 @@ source "$BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 # load configs
 source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/functions.zsh
+source ~/.config/zsh/env.zsh
 
 # zsh-syntax-highlighting (must be last)
 source "$BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
