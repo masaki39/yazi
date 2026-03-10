@@ -35,8 +35,8 @@ hash = "95a05280a6e553fd7259519eaff0f773"
 
 [[plugin.deps]]
 use = "masaki39/git-time-machine"
-rev = "4fde034"
-hash = "cf528546c588a3143e812958d7e6cadd"
+rev = "cd6449d"
+hash = "2502d444cf743c8d31c04646e5c076d2"
 
 [flavor]
 deps = []
