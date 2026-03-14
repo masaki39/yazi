@@ -59,6 +59,10 @@ spoon.SpoonInstall:andUse("Jinrai", {
 							match = { bundleID = "com.google.Chrome" },
 							prefix = "C",
 						},
+						{
+							match = { bundleID = "com.cmuxterm.app" },
+							prefix = "M",
+						},
 					},
 				},
 				navigation = {
