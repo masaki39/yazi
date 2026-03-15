@@ -1,5 +1,5 @@
 return {
-	keybind = "ctrl+alt+6",
+	keybind = "ctrl+alt+2",
 	description = "Terminal: cmux | Chrome / Obsidian",
 	windows = {
 		{ app = "cmux", screen = 1, x = 0, y = 0, w = 0.6, h = 1, focus = true },
