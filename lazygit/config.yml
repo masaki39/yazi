@@ -10,6 +10,7 @@ customCommands:
     key: c
     output: terminal
 gui:
+  language: "en"
   showIcons: true
 # log customize
 git:
