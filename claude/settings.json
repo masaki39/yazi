@@ -16,7 +16,9 @@
       "Bash(which*)",
       "Bash(type*)",
       "Bash(brew list*)",
-      "Bash(brew info*)"
+      "Bash(brew info*)",
+      "WebSearch",
+      "WebFetch"
     ],
     "deny": []
   },

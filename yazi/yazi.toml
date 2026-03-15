@@ -14,6 +14,9 @@ csvlens = [{ run = 'csvlens "$@"', block = true, for = "unix" }]
 prepend_rules = [{ mime = "text/csv", use = "csvlens" }]
 
 [plugin]
+prepend_previewers = [
+  { mime = "application/dicom", run = "magick" },
+]
 append_previewers = [
   { mime = "image/tiff", run = "magick" },
   { name = "*.jsonl", run = "json" },
