@@ -17,6 +17,7 @@
       "Bash(type*)",
       "Bash(brew list*)",
       "Bash(brew info*)",
+      "Bash(find*)",
       "WebSearch",
       "WebFetch"
     ],
