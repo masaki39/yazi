@@ -12,7 +12,7 @@ if ! command -v brew &>/dev/null; then
 fi
 
 # Create directories
-mkdir -p ~/.config ~/.ssh
+mkdir -p ~/.config ~/.ssh ~/.claude
 chmod 700 ~/.ssh
 
 # Symbolic links (force overwrite)
@@ -27,6 +27,7 @@ ln -sf "$DOTFILES/nvim" ~/.config/nvim
 ln -sf "$DOTFILES/hammerspoon" ~/.hammerspoon
 ln -sf "$DOTFILES/zsh" ~/.config/zsh
 ln -sf "$DOTFILES/lazygit" ~/.config/lazygit
+ln -sf "$DOTFILES/claude/settings.json" ~/.claude/settings.json
 
 # Install yazi plugins
 bash "$DOTFILES/yazi/install.sh"
