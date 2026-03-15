@@ -27,7 +27,7 @@ ln -sf "$DOTFILES/nvim" ~/.config/nvim
 ln -sf "$DOTFILES/hammerspoon" ~/.hammerspoon
 ln -sf "$DOTFILES/zsh" ~/.config/zsh
 ln -sf "$DOTFILES/lazygit" ~/.config/lazygit
-ln -sf "$DOTFILES/claude/settings.json" ~/.claude/settings.json
+ln -sf "$DOTFILES/claude" ~/.claude
 
 # Install yazi plugins
 bash "$DOTFILES/yazi/install.sh"
