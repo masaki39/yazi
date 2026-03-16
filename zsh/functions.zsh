@@ -56,6 +56,20 @@ function dvc() {
 	devcontainer exec --workspace-folder . /bin/bash
 }
 
+# devcontainer + claude
+function dvcc() {
+	if ! docker info >/dev/null 2>&1; then
+		echo "Docker Desktop is not running. Starting..."
+		open -a Docker
+		while ! docker info >/dev/null 2>&1; do
+			sleep 1
+		done
+		echo "Docker Desktop started."
+	fi
+	devcontainer up --workspace-folder . && \
+	devcontainer exec --workspace-folder . claude --permission-mode plan --allow-dangerously-skip-permissions
+}
+
 # yazi
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
