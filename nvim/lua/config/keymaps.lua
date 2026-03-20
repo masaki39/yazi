@@ -15,6 +15,10 @@ map("i", "<C-S-Up>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
 map("v", "<C-S-Down>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
 map("v", "<C-S-Up>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 
+-- Insert mode: visual line movement (wrap-aware)
+map("i", "<Up>", "<C-o>gk", { desc = "Move Up (visual)" })
+map("i", "<Down>", "<C-o>gj", { desc = "Move Down (visual)" })
+
 -- quit
 map({ "n", "i", "v" }, "<C-q>", "<esc><cmd>qa<cr>", { desc = "Quit All" })
 
